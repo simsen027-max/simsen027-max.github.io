@@ -1,0 +1,166 @@
+/* ============================================
+   RESET
+   Gets every browser starting from the same
+   blank slate, and fixes the width/padding math
+   problem from the box model lesson — width and
+   height now include padding and border.
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================
+   COLOR PALETTE
+   Define your colors once here, then reuse them
+   anywhere below with var(--name). Change a
+   value here and it updates the whole site —
+   that's the point of a custom property.
+   Uncomment and fill these in before anything
+   below will actually show color.
+   ============================================ */
+
+:root {
+  --color-bg: #0b0e14;
+  --color-surface: #131722;
+  --color-text: #e6e9f0;
+  --color-text-muted: #8b93a7;
+  --color-accent: #00e5ff;
+
+  --font-body: system-ui, sans-serif;
+}
+
+/* ============================================
+   BASE / BODY
+   ============================================ */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6; /* breathing room between lines of text */
+}
+
+/* ============================================
+   HEADER + NAV
+   ============================================ */
+header {
+  /* background-color, padding, text-align? */
+  background-color: var(--color-surface);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav a {
+  /* color, text-decoration: none, and a hover state */
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================
+   MAIN / SECTIONS
+   ============================================ */
+main {
+  /* max-width + margin: 0 auto; keeps text from
+     stretching uncomfortably wide on a big screen */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+section {
+  padding: 1rem;
+  /* no background-color — let the page background show through */
+}
+
+section h2 {
+  /* font-size, margin-bottom */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   ARTICLES — your project cards
+   ============================================ */
+article {
+  background-color: var(--color-surface);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.photo-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+article h3 {
+  /* font-size, margin-bottom */
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   FIGURES — photo + embedded films
+   ============================================ */
+figure {
+  /* margin */
+  margin: 1rem 0;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+figcaption {
+  /* smaller font-size, color: var(--color-text-muted) */
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background-color: var(--color-surface);
+    padding: 1rem;
+    text-align: center;
+}
